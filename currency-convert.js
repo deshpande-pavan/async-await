@@ -31,11 +31,9 @@ const convertCurrencyAlt = async (from, to, amount) => {
     const countries = await getCountries(to);
     const exchangeRate = await getExchangeRate(from, to);
     const exchangedAmount = amount * exchangeRate;
-    return `${amount} ${from} is worth ${exchangedAmount} ${to}. \n${to} can be used in the following countries:-\n${countries.join(', ')}.`;  
+    return `${amount} ${from} is worth ${exchangedAmount} ${to}. \n${to} can be used in the following countries:-\n${countries.join(', ')}.`;
 };
 
 convertCurrencyAlt('USD', 'INR', 75000).then((amount) => {
     console.log(amount);
 });
-
-
